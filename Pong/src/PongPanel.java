@@ -12,13 +12,13 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
  
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
-	private static final Color BACKGROUND_COLOUR = Color.BLACK;
+	private static final Color BACKGROUND_COLOUR = Color.GRAY;
 	private final static int TIMER_DELAY = 5;
 	private GameState gameState = GameState.INITIALISING;
 	private Paddle paddle1, paddle2;
 	Ball ball;
 	private final static int BALL_MOVEMENT_SPEED = 2;
-	private final static int POINTS_TO_WIN = 3;
+	private final static int POINTS_TO_WIN = 5;
 	int player1Score = 0, player2Score = 0;
 	Player gameWinner;
     private static final int X_PADDING = 100;
@@ -47,15 +47,15 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent event) {
 		if(event.getKeyCode() == KeyEvent.VK_W) {
-            paddle1.setYVelocity(-1);
+            paddle1.setYVelocity(-2);
         } else if(event.getKeyCode() == KeyEvent.VK_S) {
-            paddle1.setYVelocity(1);
+            paddle1.setYVelocity(2);
         }
 		
 		if(event.getKeyCode() == KeyEvent.VK_UP) {
-            paddle2.setYVelocity(-1);
+            paddle2.setYVelocity(-2);
         } else if(event.getKeyCode() == KeyEvent.VK_DOWN) {
-            paddle2.setYVelocity(1);
+            paddle2.setYVelocity(2);
         }
 	}
 
